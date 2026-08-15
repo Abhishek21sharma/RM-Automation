@@ -10,11 +10,11 @@ import { CONSTANTS } from "@/data/constants.data";
 test("e2e test", async ({ page, pm }) => {
   //TC01- landing page test
   pm.login.navTo();
-  await expect(page).toHaveURL(/.*saucedemo.*/); //1st assertion
+  await expect(page).toHaveURL(/.*saucedemo.*/);
 
   //TC02 - login page test
   await pm.login.login(VALID_USER);
-  expect(await pm.cart.getTile()).toBe("Swag Labs"); //2nd assertion
+  expect(await pm.cart.getTile()).toBe(CONSTANTS.PAGE_TITLE.dashboard);
 
   //TC03 - add to cart page test
   await pm.addToCart.selectItem(CATALOG.SAUCE_LABS_BACKPACK.name);
@@ -32,6 +32,5 @@ test("e2e test", async ({ page, pm }) => {
   expect(await pm.checkoutInfo.getPageTitle()).toBe(
     CONSTANTS.PAGE_TITLE.checkoutInfo,
   );
-  await page.waitForTimeout(1000);
   await pm.checkoutInfo.fillPersonalData(PERSONAL_INFO);
 });
