@@ -1,0 +1,21 @@
+{
+  "name": "rm-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "CROSS-ENV playwright test --project=chromium --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "faker": "^6.6.6",
+    "zod": "^4.4.3"
+  }
+}
